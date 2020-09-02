@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: regular;
+}
+
+.topo {
+    position: relative;
+    margin-left: 150px;
+    margin-top: 20px
+}
+
+.logo {
+    position: absolute;
+}
+
+.menu {
+    position: relative;
+    left: 180px;
+}
+
+.menu a {
+    color: black;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+.not-found {
+    text-align: center;
+    padding: 100px;
+}
+
+.banner {
+    width: 940px;
+    height: 366px;
+    position: relative;
+    background-color: #FBDFDB;
+    border-radius: 30px;
+    margin: 30px 150px;
+}
+
+.texto-banner {
+    font-size: 14px;
+    position: absolute;
+    margin: 100px 40px;
+}
+
+.imagem-banner {
+    position: relative;
+    left: 700px;
+    top: 70px
+}
+
+.sobre {
+    position: relative;
+    margin-top: 40px;
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 18px;
+}
+
+.sobre h1 {
+    margin: 15px 0px;
+    font-size: 20px;
+}
+
+.receitas {
+    margin: 5px 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 300px;
+    max-height: 1px;
+    gap: 10px;
+}
+
+.receita {
+    margin: 10px 0px;
+}
+
+.titulo-mais-acessado h1 {
+    font-size: 24px;
+    margin: 15px 150px;
+}
+
+.imagem-receita img {
+    border-radius: 15px;
+    width: 300px;
+    height: 140px;
+}
+
+.titulo-receita {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.autor-receita {
+    font-size: 14px;
+    color: #777777
+}
+
+.rodape {
+    position: relative;
+    padding: 20px;
+    margin-top: 30px;
+    width: 100%;
+    background-color: #eee;
+    line-height: 16px;
+}
+
+.texto-rodape {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: white;
+    width: 70%;
+    height: 70%;
+    margin: 15vh auto;
+    position: relative;
+}
+
+.modal .close-modal {
+    color: black;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50px;
+    left: 110px
+}
+
+.modal-titulo {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.modal-autor {
+    text-align: center;
+    font-size: 18px;
+    color: #777777
+}
+
+.recipe-container {
+    margin: 30px 150px;
+}
+
+.recipe-container-image {
+    margin-top: 10px
+}
+
+.recipe-container-title {
+    margin-left: 200px;
+    margin-top: 30px;
+    size: 36px;
+}
+
+.recipe-container-author {
+    color: #777777;
+    margin: 5px 240px;
+    size: 20px;
+}
+
+.recipe-container-ingredients {
+    margin-top: 30px
+}
+
+.recipe-container-ingredients-content {
+    margin-top: 10px;
+    visibility: visible;
+    transition-duration: 0.1s;
+}
+
+
+}
+.recipe-container-preparation {
+    margin-top: 30px
+}
+.recipe-container-preparation-content {
+    margin-top: 10px;
+    visibility: visible;
+    transition-duration: 0.1s;
+}
+
+}
+.recipe-container-information {
+    margin-top: 30px
+}
+.recipe-container-information-content {
+    margin-top: 10px;
+    visibility: visible;
+    transition-duration:0.1s;
+}
+
+}
+.recipe-container-ingredients-content.hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+.recipe-container-preparation-content.hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+.recipe-container-information-content.hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+.recipe-container-ingredients-content button {
+    margin-left: 150px;
+}
+.recipe-container-preparation-content button {
+    margin-left: 195px;
+}
+.recipe-container-information-content button {
+    margin-left: 270px;
+}
