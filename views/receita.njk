@@ -1,6 +1,7 @@
 {% extends "layout.njk" %}
 {% block header %}
-    <title>Foodfy -{{receita.title}}</title>
+       <title>Foodfy -{{receita.title}}</title>
+       <link rel="stylesheet" href="/css/recipe.css">
 {% endblock %}
 {% block content %}
     <div class="recipe-container">
@@ -42,7 +43,7 @@
         <div class="recipe-container-information-content">
             <p>{{receita.information}}</p>
         </div>
-        <script src="/script.js"></script>
+        <script src="/scripts/scriptreceita.js"></script>
     </div>
 
 {% endblock %}
