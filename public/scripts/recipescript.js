@@ -9,7 +9,7 @@ for (let button of buttons) {
         } else {
             button.textContent = 'ESCONDER'
         }
-        const idButton = button.getAttribute('id')
+        const idButton = button.getAttribute('class')
 
         if (idButton == 'ingredients-button') {
             if (ingredients.classList.contains('hide')) {

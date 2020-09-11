@@ -1,7 +1,6 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
 const receitas = require('./data')
-
 const server = express()
 server.use(express.static("public"))
 server.set("view engine", "njk")

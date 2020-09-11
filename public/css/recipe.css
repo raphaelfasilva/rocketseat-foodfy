@@ -66,14 +66,20 @@
     height: 0;
 }
 
-.recipe-container-ingredients-content button {
-    margin-left: 150px;
+button.ingredients-button {
+    background-color: white;
+    color: black;
+    border: none;
 }
 
-.recipe-container-preparation-content button {
-    margin-left: 195px;
+button.preparation-button {
+    background-color: white;
+    color: black;
+    border: none;
 }
 
-.recipe-container-information-content button {
-    margin-left: 270px;
+button.information-button {
+    background-color: white;
+    color: black;
+    border: none;
 }
