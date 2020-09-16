@@ -10,6 +10,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: regular;
+    min-height: 140vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -48,6 +49,10 @@ body {
     margin-left: 150px;
 }
 
+.recipes-container {
+    margin-left: 150px;
+}
+
 .banner {
     width: 940px;
     height: 366px;
@@ -83,7 +88,7 @@ body {
 }
 
 .receitas {
-    margin: 5px 30px;
+    margin: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 300px;

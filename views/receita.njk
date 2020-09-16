@@ -8,16 +8,15 @@
         <div class="recipe-container-image"></div>
         <img src="/{{receita.image}}" alt="">
         <div class="recipe-container-title">
-            <h1>{{receita.title}}</h1>
+            <p>{{receita.title}}<p>
         </div>
         <div class="recipe-container-author">
-            <p>by
-                {{receita.author}}</p>
+            <p>by {{receita.author}}</p>
         </div>
         <div class="recipe-container-ingredients">
-            <h1>ingredientes</h1>
-            <button class="ingredients-button">ESCONDER</button>
+            <p>ingredientes</p>
         </div>
+        <button class="ingredients-button">ESCONDER</button>
         <div class="recipe-container-ingredients-content">
             <ul>
                 {% for ing in receita.ingredients %}
@@ -26,9 +25,9 @@
             </ul>
         </div>
         <div class="recipe-container-preparation">
-            <h1>Modo de preparo</h1>
-            <button class="preparation-button">ESCONDER</button>
+            <p>Modo de preparo</p>
         </div>
+        <button class="preparation-button">ESCONDER</button>
         <div class="recipe-container-preparation-content">
             <ul>
                 {% for prep in receita.preparation %}
@@ -37,9 +36,9 @@
             </ul>
         </div>
         <div class="recipe-container-information">
-            <h1>Informações</h1>
-            <button class="information-button">ESCONDER</button>
+            <p>Informações</p>
         </div>
+        <button class="information-button">ESCONDER</button>
         <div class="recipe-container-information-content">
             <p>{{receita.information}}</p>
         </div>

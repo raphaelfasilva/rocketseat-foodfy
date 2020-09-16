@@ -9,43 +9,53 @@
 .recipe-container-title {
     margin-left: 200px;
     margin-top: 30px;
-    size: 36px;
+    font-size: 36px;
+    font-size: bold;
 }
 
 .recipe-container-author {
     color: #777777;
-    margin: 5px 240px;
-    size: 20px;
+    margin: 5px 250px;
+    font-size: 20px;
 }
 
 .recipe-container-ingredients {
     margin-top: 30px;
+    font-size: 24px;
+    font-size: bold;
 }
 
 .recipe-container-ingredients-content {
     margin-top: 10px;
     visibility: visible;
     transition-duration: 0.1s;
+    font-size: 18px;
 }
 
 .recipe-container-preparation {
     margin-top: 30px;
+    font-size: 24px;
+    font-size: bold;
 }
 
 .recipe-container-preparation-content {
     margin-top: 10px;
     visibility: visible;
     transition-duration: 0.1s;
+    font-size: 18;
 }
 
 .recipe-container-information {
     margin-top: 30px;
+    font-size: 24px;
+    font-size: bold;
 }
 
 .recipe-container-information-content {
     margin-top: 10px;
     visibility: visible;
     transition-duration: 0.1s;
+    font-size: 18px;
 }
 
 .recipe-container-ingredients-content.hide {
