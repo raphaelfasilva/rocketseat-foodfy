@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: regular;
+}
+
+.topo {
+    position: relative;
+    background: black;
+    width: 100%;
+    padding: 30px;
+}
+
+.logo {
+    position: absolute;
+    margin-left: 150px;
+    margin-top: -15px;
+}
+
+.recipes-container {
+    margin-left: 150px;
+}
+
+.receitas {
+    margin: 0px 30px 30px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 300px;
+    max-height: 1px;
+    gap: 10px;
+    margin-bottom: 450px;
+}
+
+.receita {
+    margin: 10px 0px;
+}
+
+.imagem-receita img {
+    border-radius: 15px;
+    width: 300px;
+    height: 140px;
+}
+
+.titulo-receita {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.autor-receita {
+    font-size: 14px;
+    color: #777777
+}
+
+.recipe-container-content {
+    margin: 30px 180px;
+}
+
+.recipe-container-content-image {
+    margin-top: 10px
+}
+
+.recipe-container-content-title {
+    margin-left: 200px;
+    margin-top: 30px;
+    font-size: 36px;
+    font-size: bold;
+}
+
+.recipe-container-content-author {
+    color: #777777;
+    margin: 5px 250px;
+    font-size: 20px;
+}
+
+.recipe-container-content-ingredients {
+    margin-top: 30px;
+    font-size: 24px;
+    font-size: bold;
+}
+
+.recipe-container-ingredients-content {
+    margin-top: 10px;
+    visibility: visible;
+    transition-duration: 0.1s;
+    font-size: 18px;
+}
+
+.recipe-container-content-preparation {
+    margin-top: 30px;
+    font-size: 24px;
+    font-size: bold;
+}
+
+.recipe-container-preparation-content {
+    margin-top: 10px;
+    visibility: visible;
+    transition-duration: 0.1s;
+    font-size: 18;
+}
+
+.recipe-container-content-information {
+    margin-top: 30px;
+    font-size: 24px;
+    font-size: bold;
+}
+
+.recipe-container-information-content {
+    margin-top: 10px;
+    visibility: visible;
+    transition-duration: 0.1s;
+    font-size: 18px;
+}
+
+.recipe-container-ingredients-content.hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+.recipe-container-preparation-content.hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+.recipe-container-information-content.hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+button.ingredients-button {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+button.preparation-button {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+button.information-button {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+.title-manager-recipes {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}

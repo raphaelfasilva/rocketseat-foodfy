@@ -1,0 +1,48 @@
+{% extends "foodfy/layout.njk" %}
+{% block header %}
+       <title>Foodfy -{{receita.title}}</title>
+       <link rel="stylesheet" href="/css/recipe.css">
+{% endblock %}
+{% block content %}
+    <div class="recipe-container">
+        <div class="recipe-container-image"></div>
+        <img src="/img/{{receita.image}}" alt="">
+        <div class="recipe-container-title">
+            <p>{{receita.title}}<p>
+        </div>
+        <div class="recipe-container-author">
+            <p>by {{receita.author}}</p>
+        </div>
+        <div class="recipe-container-ingredients">
+            <p>ingredientes</p>
+        </div>
+        <button class="ingredients-button">ESCONDER</button>
+        <div class="recipe-container-ingredients-content">
+            <ul>
+                {% for ing in receita.ingredients %}
+                    <li>{{ing}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="recipe-container-preparation">
+            <p>Modo de preparo</p>
+        </div>
+        <button class="preparation-button">ESCONDER</button>
+        <div class="recipe-container-preparation-content">
+            <ul>
+                {% for prep in receita.preparation %}
+                    <li>{{prep}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="recipe-container-information">
+            <p>Informações</p>
+        </div>
+        <button class="information-button">ESCONDER</button>
+        <div class="recipe-container-information-content">
+            <p>{{receita.information}}</p>
+        </div>
+        <script src="/js/recipescript.js"></script>
+    </div>
+
+{% endblock %}

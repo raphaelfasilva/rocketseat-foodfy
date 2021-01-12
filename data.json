@@ -1,5 +1,5 @@
 {
-    "receitas": [{
+    "recipes": [{
             "id": 1,
             "image": "burger.png",
             "title": "Triplo bacon burger",

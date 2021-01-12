@@ -1,0 +1,58 @@
+{% extends "foodfy/layout.njk" %}
+{% block header %}
+    <title>Foodfy - Home</title>
+{% endblock %}
+{% block content %}
+    <div class="home-container">
+        <div class="banner">
+            <div class="texto-banner">
+                <h1>As melhores receitas</h1>
+                <p>Aprenda a construir os melhores pratos</p>
+                <p>com receitas criadas por profissionais do mundo inteiro.</p>
+            </div>
+            <div class="imagem-banner">
+                <img src="/img/chef.png" alt="">
+            </div>
+        </div>
+        <div class="titulo-mais-acessado">
+            <h1>Mais Acessadas</h1>
+        </div>
+        <div class="receitas">
+            {% for receita in itemsreceitas %}
+                <div class="receita" id="{{receita.id}}">
+                    <div class="imagem-receita">
+                        <img src="/img/{{receita.image}}" alt="">
+                    </div>
+                    <div class="titulo-receita">
+                        <p>{{receita.title}}</p>
+                    </div>
+                    <div class="autor-receita">
+                        <p>por
+                            {{receita.author}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!--
+    <div class="modal-overlay">
+        <div class="modal">
+            <a class="close-modal">
+                <i class="material-icons">close</i>
+            </a>
+            <div class="modal-content">
+                <div class="modal-imagem">
+                    <img src="" alt="" class="modal-imagem">
+                </div>
+                <div class="modal-titulo">
+                    <p></p>
+                </div>
+                <div class="modal-autor">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <script src="/js/recipesid.js"></script>
+{% endblock %}
