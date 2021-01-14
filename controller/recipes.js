@@ -11,3 +11,6 @@ exports.show = function(req, res) {
         return res.render("admin/recipe", { receita });
     }
 }
+exports.create = function(req, res) {
+    res.render("admin/create.njk")
+}

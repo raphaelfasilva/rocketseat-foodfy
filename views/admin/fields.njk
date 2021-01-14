@@ -1,0 +1,30 @@
+<div class="item">
+    <div>imagem da receita</div>
+    <input type="text" name="image" value="{{recipe.image}}">
+</div>
+<div class="item">
+    <div>Ingredientes</div>
+    {% if recipes.ingredients %}
+        {% for ingredient in recipe.ingredients %}
+            <input type="text" name="ingredients" value="{ingredient}">
+        {% endfor %}
+    {% else %}
+        <input type="text" name="ingredients" value="">
+    {% endif %}
+    <button type="button" class="add-ingredient">Adicionar Ingrediente</button>
+</div>
+<div class="item">
+    <div>Modo de preparo</div>
+    {% if recipes.preparation %}
+        {% for steps in recipes.preparation %}
+            <input type="text" name="ingredients" value="{step}">
+        {% endfor %}
+    {% else %}
+        <input type="text" name="ingredients" value="">
+    {% endif %}
+    <button type="button" class="add-ingredient">Adicionar Ingrediente</button>
+</div>
+<div class="item">
+    <div>informações adicionais</div>
+    <input type="text" name="information" value="{{recipe.information}}">
+</div>
