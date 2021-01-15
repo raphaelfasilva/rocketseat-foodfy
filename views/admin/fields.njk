@@ -25,12 +25,13 @@
     {% if recipe.preparation %}
         {% for steps in recipe.preparation %}
              <div class="step">
-            <input type="text" name="preparations[]" value="{{steps}}">
+                 <input type="text" name="preparations[]" value="{{steps}}">
              </div>
         {% endfor %}  
     {% else %}
              <div class="step">
-            <input type="text" name="preparations[]" value="{{steps}}">
+            <input type="text" name="preparations[]" value="">
+            </div>
     {% endif %}
     </div>
     <button type="button" class="add-steps">Adicionar Novo passo</button>
