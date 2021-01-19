@@ -5,9 +5,9 @@
 {% block content %}
     <div class="formulario">
         <p>Criando receita</p>
-        <form action="/admin/recipes" method="post">
+        <form id="form-edit" action="/admin/recipes" method="post">
             {% include "admin/fields.njk" %}
-            <button type="submit">Salvar</button>
         </form>
     </div>
+    <script src="/js/addingredientsandsteps.js"></script>   
 {% endblock %}

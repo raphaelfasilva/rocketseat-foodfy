@@ -4,10 +4,24 @@
 {% endblock %}
 {% block content %}
     <div class="formulario">
+        <form action="/admin/recipes?_method=DELETE" method="post" id="form-delete">
+            <input type="hidden" name="id" value="{{recipe.id}}">
+            <button type="submit">Deletar</button>
+        </form>
         <p>Editando Receita</p>
-        <form action="/admin/recipes?_method=PUT" method="post">
+        <form id="form-edit" action="/admin/recipes?_method=PUT" method="post">
+            <input type="hidden" name="id" value="{{recipe.id}}">
             {% include "admin/fields.njk" %}
-            <button type="submit">Salvar</button>
         </form>
     </div>
+    <script>
+        const formDelete = document.querySelector("#form-delete")
+        formDelete.addEventListener("submit", function (event) {
+            const confirmation = confirm("deseja deletar?")
+            if (!confirmation) {
+                event.preventDefault()
+            }
+        })
+    </script>
+    <script src="/js/addingredientsandsteps.js"></script>
 {% endblock %}
