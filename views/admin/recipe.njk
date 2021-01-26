@@ -4,6 +4,8 @@
 {% endblock %}
 {% block content %}
    <div class="recipe-container-content">
+        <p class="recipe-view-top-label"> Receita: {{receita.title}}</p>
+        <a class="recipe-view-top-button" href="/admin/recipes/{{receita.id}}/edit">Editar Receita</a>
         <div class="recipe-container-content-image"></div>
         <img src="/img/{{receita.image}}" alt="">
         <div class="recipe-container-content-title">

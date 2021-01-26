@@ -1,7 +1,7 @@
 const ingredients = document.querySelector('.recipe-container-ingredients-content')
 const preparation = document.querySelector('.recipe-container-preparation-content')
 const information = document.querySelector('.recipe-container-information-content')
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.ingredients-button,.preparation-button,.information-button');
 for (let button of buttons) {
     button.addEventListener('click', function() {
         if (button.textContent == 'ESCONDER') {
