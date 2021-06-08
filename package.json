@@ -5,8 +5,8 @@
     "main": "server.js",
     "scripts": {
         "start": "npm-run-all -p nodemon browsersync",
-        "nodemon": "nodemon --ignore '*.json' server.js",
-        "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public,views'"
+        "nodemon": "nodemon --ignore '*.json' ./src/server.js",
+        "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public,./app/views'"
     },
     "author": "",
     "license": "ISC",

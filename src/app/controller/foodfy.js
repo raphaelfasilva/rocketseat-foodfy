@@ -1,4 +1,4 @@
-const data = require('../data')
+const data = require('../../../data')
 exports.about = function(req, res) {
     return res.render("foodfy/about")
 }
