@@ -2,6 +2,7 @@ const express = require('express')
 const routes = express.Router()
 const foodfy = require("./app/controller/foodfy")
 const recipes = require("./app/controller/recipes")
+const chefs = require("./app/controller/chefs")
 routes.get('/', foodfy.index)
 routes.get('/sobre', foodfy.about)
 routes.get('/receitas', foodfy.recipes)
@@ -17,8 +18,7 @@ routes.get("/admin/recipes/:id/edit", recipes.edit); // Mostrar formulário de e
 routes.post("/admin/recipes", recipes.post); // Cadastrar nova receita
 routes.put("/admin/recipes", recipes.put); // Editar uma receita
 routes.delete("/admin/recipes", recipes.delete); // Deletar uma receita
-routes.use(function(req, res) {
-    res.status(404).render("not-found");
-});
+//routes.use(recipes.notfound);
 
+routes.get("/admin/chefs", chefs.index);
 module.exports = routes

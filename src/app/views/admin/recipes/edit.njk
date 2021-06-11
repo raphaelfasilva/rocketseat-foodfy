@@ -11,7 +11,7 @@
         <p>Editando Receita</p>
         <form id="form-edit" action="/admin/recipes?_method=PUT" method="post">
             <input type="hidden" name="id" value="{{recipe.id}}">
-            {% include "admin/fields.njk" %}
+            {% include "admin/recipes/fields.njk" %}
         </form>
     </div>
     <script>
