@@ -1,0 +1,12 @@
+{% extends "admin/layout.njk" %}
+{% block header %}
+    <title>Foodfy - Admin - Cadastrar chefs</title>
+{% endblock %}
+{% block content %}
+    <div class="formulario">
+        <p>Criando receita</p>
+        <form id="form-edit" action="/admin/chefs" method="post">
+            {% include "admin/chefs/fields.njk" %}
+        </form>
+    </div>
+{% endblock %}
