@@ -2,3 +2,25 @@
 {% block header %}
     <title>Foodfy - Admin - chefs</title>
 {% endblock %}
+{% block content %}
+     <div class="recipes-container">
+         <a href="/admin/recipes/create">Cadastrar Chef</a>
+         <p class="title-manager-recipes">Gerenciar Chefs</p>
+        <div class="receitas">
+            {% for chef in itemschefs %}
+                <div class="receita" id="{{chef.id}}">
+                    <div class="imagem-receita">
+                        <img src="{{chef.avatar_url}}" alt="">
+                    </div>
+                    <div class="titulo-receita">
+                        <p>{{chef.name}}</p>
+                    </div>
+                    <div class="autor-receita">
+                        <p>por
+                            {{receitas.author}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

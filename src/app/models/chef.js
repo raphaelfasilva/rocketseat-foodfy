@@ -23,8 +23,14 @@ module.exports = {
             date(Date.now()).iso
         ]
         db.query(query, values, function(err, results) {
-            if (err) throw err
+            if (err) throw "data base error"
             callback(results.rows[0])
         })
-    }
+    },
+    find(id, callback) {
+        db.query('select * from chefs where id = $1', [id], function(err, results) {
+            if (err) throw "data base error"
+            callback(results.rows[0])
+        })
+    },
 }
