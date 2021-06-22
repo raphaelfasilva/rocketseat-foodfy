@@ -3,24 +3,21 @@
     <title>Foodfy - Admin - chefs</title>
 {% endblock %}
 {% block content %}
-     <div class="recipes-container">
+     <div class="chefs-container">
          <a href="/admin/recipes/create">Cadastrar Chef</a>
-         <p class="title-manager-recipes">Gerenciar Chefs</p>
-        <div class="receitas">
+         <p class="title-manager-chefs">Gerenciar Chefs</p>
+        <div class="chefs">
             {% for chef in itemschefs %}
-                <div class="receita" id="{{chef.id}}">
-                    <div class="imagem-receita">
+                <div class="chef" id="{{chef.id}}">
+                    <div class="avatar-chef">
                         <img src="{{chef.avatar_url}}" alt="">
                     </div>
-                    <div class="titulo-receita">
+                    <div class="name-chef">
                         <p>{{chef.name}}</p>
-                    </div>
-                    <div class="autor-receita">
-                        <p>por
-                            {{receitas.author}}</p>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
+<script src="/js/recipesid-admin.js"></script>
 {% endblock %}

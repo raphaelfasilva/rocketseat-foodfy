@@ -1,11 +1,11 @@
 {% extends "admin/layout.njk" %}
 {% block header %}
-    <title>Visualizar receita - {{recipe.title}} </title>
+    <title>Visualizar chef - {{chef.name}} </title>
 {% endblock %}
 {% block content %}
   <div class="recipe-container-content">
        <p class="recipe-view-top-label"> Chef-  {{chef.name}}</p>
-        <a class="recipe-view-top-button" href="/admin/recipes/{{chef.id}}/edit">Editar Receita</a>
+        <a class="recipe-view-top-button" href="/admin/recipes/{{chef.id}}/edit">Editar chef</a>
         <div class="recipe-container-content-image"></div>
         <img src="{{chef.avatar_url}}" alt="">
         <div class="recipe-container-content-title">

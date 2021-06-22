@@ -264,3 +264,52 @@ button.information-button {
     left: 830px;
     top: 50px;
 }
+
+.chefs-container {
+    margin-left: 150px;
+}
+
+.chefs {
+    margin: 0px 30px 30px 30px;
+    dgrid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 300px;
+    max-height: 1px;
+    gap: 10px;
+    margin-bottom: 450px;
+}
+
+.chef {
+    margin: 10px 0px;
+}
+
+.avatar-chef img {
+    border-radius: 15px;
+    width: 300px;
+    height: 140px;
+}
+
+.name-che {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.title-manager-chefs {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.chefs-container a {
+    position: relative;
+    background-color: #6558C3;
+    padding: 7px 20px;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    border: none;
+    left: 830px;
+    top: 50px;
+}
