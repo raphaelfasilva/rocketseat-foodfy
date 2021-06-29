@@ -12,7 +12,9 @@ module.exports = {
 
     },
     recipes(req, res) {
-        return res.render("foodfy/recipes", { itemsreceitas: data.recipes })
+        recipe.all(function(recipes) {
+            return res.render("foodfy/recipes", { itemsreceitas: recipes })
+        })
     },
     show(req, res) {
         const recipeIndex = req.params.id - 1;
