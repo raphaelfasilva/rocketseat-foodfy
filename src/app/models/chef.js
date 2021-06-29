@@ -29,8 +29,26 @@ module.exports = {
     },
     find(id, callback) {
         db.query('select * from chefs where id = $1', [id], function(err, results) {
-            if (err) throw "data base error"
+            if (err) throw err
             callback(results.rows[0])
         })
     },
+    update(data, callback) {
+        const query = `
+        update chefs SET 
+        name=($1),
+        avatar_url=($2)
+        where id=$3
+     `
+        const values = [
+            data.name,
+            data.avatar_url,
+            data.id
+        ]
+        db.query(query, values, function(err, res) {
+            if (err) throw err
+            callback()
+        })
+
+    }
 }

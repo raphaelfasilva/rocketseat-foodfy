@@ -4,13 +4,13 @@
 {% endblock %}
 {% block content %}
     <div class="formulario">
-        <form action="/admin/recipes?_method=DELETE" method="post" id="form-delete">
-            <input type="hidden" name="id" value="{{recipe.id}}">
+        <form action="/admin/chefs?_method=DELETE" method="post" id="form-delete">
+            <input type="hidden" name="id" value="{{chef.id}}">
             <button type="submit">Deletar</button>
         </form>
         <p>Editando Receita</p>
-        <form id="form-edit" action="/admin/recipes?_method=PUT" method="post">
-            <input type="hidden" name="id" value="{{recipe.id}}">
+        <form id="form-edit" action="/admin/chefs?_method=PUT" method="post">
+            <input type="hidden" name="id" value="{{chef.id}}">
             {% include "admin/chefs/fields.njk" %}
         </form>
     </div>

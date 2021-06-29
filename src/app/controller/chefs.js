@@ -33,5 +33,12 @@ module.exports = {
             if (!chef) return res.send("chef não encontrado")
             return res.render("admin/chefs/edit", { chef })
         })
+    },
+    put(req, res) {
+        const { id } = req.body
+        chef.update(req.body, function() {
+            return res.redirect(`/admin/chefs/${id}`)
+        })
     }
+
 }

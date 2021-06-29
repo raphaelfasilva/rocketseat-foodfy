@@ -1,8 +1,12 @@
 const data = require('../../../data')
 const fs = require("fs")
+const recipe = require('../models/recipe')
 module.exports = {
     index(req, res) {
-        res.render("admin/recipes/index", { itemsreceitas: data.recipes })
+        recipe.all(function(recipes) {
+            res.render("admin/recipes/index", { itemsreceitas: recipes })
+        })
+
     },
     show(req, res) {
         const recipeIndex = req.params.id - 1;
