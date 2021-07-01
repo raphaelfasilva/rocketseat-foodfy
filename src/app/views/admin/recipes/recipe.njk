@@ -1,18 +1,18 @@
 {% extends "admin/layout.njk" %}
 {% block header %}
-    <title>Visualizar receita - {{recipe.title}} </title>
+    <title>Visualizar recipe - {{recipe.title}} </title>
 {% endblock %}
 {% block content %}
    <div class="recipe-container-content">
-        <p class="recipe-view-top-label"> Receita: {{receita.title}}</p>
-        <a class="recipe-view-top-button" href="/admin/recipes/{{receita.id}}/edit">Editar Receita</a>
+        <p class="recipe-view-top-label"> recipe: {{recipe.title}}</p>
+        <a class="recipe-view-top-button" href="/admin/recipes/{{recipe.id}}/edit">Editar recipe</a>
         <div class="recipe-container-content-image"></div>
-        <img src="/img/{{receita.image}}" alt="">
+        <img src="/img/{{recipe.image}}" alt="">
         <div class="recipe-container-content-title">
-            <p>{{receita.title}}<p>
+            <p>{{recipe.title}}<p>
         </div>
         <div class="recipe-container-content-author">
-            <p>by {{receita.author}}</p>
+            <p>by {{recipe.author}}</p>
         </div>
         <div class="recipe-container-content-ingredients">
             <p>ingredientes</p>
@@ -20,7 +20,7 @@
         <button class="ingredients-button">ESCONDER</button>
         <div class="recipe-container-ingredients-content">
             <ul>
-                {% for ing in receita.ingredients %}
+                {% for ing in recipe.ingredients %}
                     <li>{{ing}}</li>
                 {% endfor %}
             </ul>
@@ -31,7 +31,7 @@
         <button class="preparation-button">ESCONDER</button>
         <div class="recipe-container-preparation-content">
             <ul>
-                {% for prep in receita.preparation %}
+                {% for prep in recipe.preparation %}
                     <li>{{prep}}</li>
                 {% endfor %}
             </ul>
@@ -41,7 +41,7 @@
         </div>
         <button class="information-button">ESCONDER</button>
         <div class="recipe-container-information-content">
-            <p>{{receita.information}}</p>
+            <p>{{recipe.information}}</p>
         </div>
         <script src="/js/recipescript.js"></script>
     </div>
