@@ -68,6 +68,12 @@ module.exports = {
         db.query(`DELETE FROM recipes where id = $1`, [id], function() {
             callback()
         })
-    }
+    },
+    ChefsSelectoptions(callback) {
+        db.query('SELECT name,id FROM chefs', function(err, results) {
+            if (err) throw 'data base error'
+            callback(results.rows)
+        })
+    },
 
 }

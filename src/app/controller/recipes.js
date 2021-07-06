@@ -20,7 +20,10 @@ module.exports = {
 
     },
     create(req, res) {
-        res.render("admin/recipes/create.njk")
+        recipe.ChefsSelectoptions(function(chefsOptions) {
+            res.render("admin/recipes/create.njk", { chefsOptions })
+        })
+
     },
     edit(req, res) {
         const { id } = req.params
