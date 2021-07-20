@@ -27,14 +27,14 @@ module.exports = {
     },
     edit(req, res) {
         const { id } = req.params
-        recipe.find(id, function(recipe) {
-            if (!recipe) {
-                res.status(404).render("admin/not-found");
-            } else {
-                return res.render("admin/recipes/edit", { recipe })
-            }
+        recipe.ChefsSelectoptions(function(chefsOptions) {
+            recipe.find(id, function(recipe) {
+                if (!recipe) res.status(404).render("admin/not-found");
+                return res.render("admin/recipes/edit", { recipe, chefsOptions })
+            })
 
         })
+
     },
     post(req, res) {
         const keys = Object.keys(req.body)

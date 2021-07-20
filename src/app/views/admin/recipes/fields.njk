@@ -5,9 +5,9 @@
     <input type="text" name="title" value="{{recipe.title}}">
        <div>Autor</div>
         <div>
-        <select name="chefs">
+        <select name="chef_id">
             {% for chef in chefsOptions %}
-            <option value="{{members.id}}" {% if member.instructor_id == instructor.id %} selected
+            <option value="{{chef.id}}" {% if recipe.chef_id == chef.id %} selected
             {% endif %}>{{chef.name}}</option>
             {% endfor %}
         </select>
