@@ -361,3 +361,10 @@ button.information-button {
     bottom: 10px;
     left: 700px;
 }
+
+.chef-recipes-number {
+    margin-left: 440px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #777777;
+}

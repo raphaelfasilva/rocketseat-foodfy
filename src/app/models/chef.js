@@ -28,7 +28,9 @@ module.exports = {
         })
     },
     find(id, callback) {
-        db.query('select * from chefs where id = $1', [id], function(err, results) {
+        db.query(`SELECT chefs.*,count(recipes) AS total_recipes
+        from chefs
+        LEFT JOIN recipes on (chefs.id = recipes.chef_id) where chefs.id = $1 GROUP BY chefs.id `, [id], function(err, results) {
             if (err) throw err
             callback(results.rows[0])
         })
