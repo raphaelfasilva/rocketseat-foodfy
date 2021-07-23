@@ -16,4 +16,23 @@
           <p>{{chef.total_recipes}} receitas</p>
         </div>
   </div>
+     <div class="recipes-container">
+        <div class="receitas">
+            {% for receitas in itemsreceitas %}
+                <div class="receita" id="{{receitas.id}}">
+                    <div class="imagem-receita">
+                        <img src="/img/{{receitas.image}}" alt="">
+                    </div>
+                    <div class="titulo-receita">
+                        <p>{{receitas.title}}</p>
+                    </div>
+                    <div class="autor-receita">
+                        <p>por
+                            {{receitas.author}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="/js/recipesid-admin.js"></script>
 {% endblock %}

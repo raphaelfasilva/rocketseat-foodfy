@@ -22,10 +22,13 @@ module.exports = {
     },
     show(req, res) {
         const { id } = req.params
-        chef.find(id, function(chef) {
-            if (!chef) return res.send("chef não encontrado")
-            return res.render("admin/chefs/chef", { chef })
+        chef.recipeschefList(id, function(recipes) {
+            chef.find(id, function(chef) {
+                if (!chef) return res.send("chef não encontrado")
+                return res.render("admin/chefs/chef", { chef, itemsreceitas: recipes })
+            })
         })
+
     },
     edit(req, res) {
         const { id } = req.params
