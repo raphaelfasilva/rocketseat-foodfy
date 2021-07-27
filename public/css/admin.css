@@ -368,3 +368,9 @@ button.information-button {
     font-size: 20px;
     color: #777777;
 }
+
+.recipes-title {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}

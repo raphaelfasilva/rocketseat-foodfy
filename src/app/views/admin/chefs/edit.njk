@@ -1,6 +1,6 @@
 {% extends "admin/layout.njk" %}
 {% block header %}
-    <title>Foodfy - Admin - Editar receita</title>
+    <title>Foodfy - Admin - Editar Chefs</title>
 {% endblock %}
 {% block content %}
     <div class="formulario">
@@ -8,7 +8,7 @@
             <input type="hidden" name="id" value="{{chef.id}}">
             <button type="submit">Deletar</button>
         </form>
-        <p>Editando Receita</p>
+        <p>Editando Chef</p>
         <form id="form-edit" action="/admin/chefs?_method=PUT" method="post">
             <input type="hidden" name="id" value="{{chef.id}}">
             {% include "admin/chefs/fields.njk" %}

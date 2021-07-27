@@ -53,6 +53,11 @@ module.exports = {
         })
 
     },
+    delete(id, callback) {
+        db.query(`DELETE FROM chefs where id = $1`, [id], function() {
+            callback()
+        })
+    },
     recipeschefList(id, callback) {
         db.query(`SELECT recipes.*,chefs.name AS author
         from recipes 
