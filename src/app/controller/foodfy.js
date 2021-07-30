@@ -1,4 +1,3 @@
-const data = require('../../../data')
 const recipe = require('../models/recipe')
 
 module.exports = {
@@ -17,12 +16,14 @@ module.exports = {
         })
     },
     show(req, res) {
-        const recipeIndex = req.params.id - 1;
-        receita = data.recipes[recipeIndex];
-        if (!receita) {
-            res.status(404).render("not-found");
-        } else {
-            return res.render("foodfy/recipe", { receita });
-        }
+        const id = req.params.id
+        recipe.find(id, function(recipe) {
+            if (!recipe) {
+                res.status(404).render("not-found");
+            } else {
+                return res.render("foodfy/recipe", { receita: recipe });
+            }
+        })
+
     }
 }
