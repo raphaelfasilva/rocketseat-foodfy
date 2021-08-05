@@ -10,6 +10,12 @@ module.exports = {
         })
 
     },
+    search(req, res) {
+        const { filter } = req.params
+        recipe.findBy(filter, function(recipes) {
+            return res.render("foodfy/search", { itemsreceitas: recipes })
+        })
+    },
     recipes(req, res) {
         recipe.all(function(recipes) {
             return res.render("foodfy/recipes", { itemsreceitas: recipes })

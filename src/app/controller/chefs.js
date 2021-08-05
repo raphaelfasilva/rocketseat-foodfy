@@ -1,9 +1,17 @@
 const chef = require('../models/chef')
 module.exports = {
     index(req, res) {
-        chef.all(function(chefs) {
-            return res.render("admin/chefs/index", { itemschefs: chefs })
-        })
+        let { filter } = req.query
+        if (filter) {
+            chef.findBy(filter, function(chefs) {
+                return res.render("admin/chefs/index", { itemschefs: chefs, filter })
+            })
+        } else {
+            chef.all(function(chefs) {
+                return res.render("admin/chefs/index", { itemschefs: chefs })
+            })
+        }
+
     },
     create(req, res) {
         return res.render("admin/chefs/create")
