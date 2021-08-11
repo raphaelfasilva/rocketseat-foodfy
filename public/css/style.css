@@ -183,3 +183,9 @@ footer {
     font-size: 18px;
     color: #777777
 }
+
+.search-recipes {
+    position: relative;
+    left: 900px;
+    bottom: 20px;
+}

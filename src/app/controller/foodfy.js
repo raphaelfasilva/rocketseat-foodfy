@@ -11,9 +11,9 @@ module.exports = {
 
     },
     search(req, res) {
-        const { filter } = req.params
+        const { filter } = req.query
         recipe.findBy(filter, function(recipes) {
-            return res.render("foodfy/search", { itemsreceitas: recipes })
+            return res.render("foodfy/search", { itemsreceitas: recipes, filter })
         })
     },
     recipes(req, res) {

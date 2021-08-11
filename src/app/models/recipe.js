@@ -49,7 +49,7 @@ module.exports = {
         db.query(`SELECT recipes.*,chefs.name AS author
         from recipes 
         LEFT JOIN chefs on (recipes.chef_id = chefs.id)
-        where chefs.name ilike '%${filter}%' 
+        where recipes.title ilike '%${filter}%' 
         order by name`, function(err, results) {
             if (err) throw ("data base error")
             callback(results.rows)
