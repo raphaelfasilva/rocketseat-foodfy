@@ -1,4 +1,5 @@
 const recipe = require('../models/recipe')
+const chef = require('../models/chef')
 
 module.exports = {
     about(req, res) {
@@ -31,5 +32,10 @@ module.exports = {
             }
         })
 
+    },
+    chefs(req, res) {
+        chef.all(function(chefs) {
+            return res.render("foodfy/chefs", { itemschefs: chefs })
+        })
     }
 }

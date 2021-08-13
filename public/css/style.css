@@ -189,3 +189,36 @@ footer {
     left: 900px;
     bottom: 20px;
 }
+
+.chefs-container {
+    margin-left: 120px;
+    margin-top: 40px;
+}
+
+.chefs {
+    margin: 0px 30px 30px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 300px;
+    max-height: 1px;
+    gap: 10px;
+    margin-bottom: 450px;
+}
+
+.chef {
+    margin: 10px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.avatar-chef img {
+    border-radius: 50px;
+    width: 64px;
+    height: 64px;
+}
+
+.name-chef {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
