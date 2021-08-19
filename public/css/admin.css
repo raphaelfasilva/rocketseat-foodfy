@@ -24,6 +24,18 @@ body {
     margin-top: -15px;
 }
 
+.menu {
+    position: absolute;
+    left: 290px;
+    bottom: 20px;
+}
+
+.menu a {
+    font-weight: bold;
+    color: #999999;
+    padding-left: 20px;
+}
+
 .recipes-container {
     margin-left: 150px;
 }
