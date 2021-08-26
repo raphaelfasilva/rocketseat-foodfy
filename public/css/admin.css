@@ -340,7 +340,7 @@ button.information-button {
 }
 
 .chef-container-content-image {
-    text-align: center;
+    margin-left: 300px;
 }
 
 .chef-container-content-image img {
@@ -351,7 +351,7 @@ button.information-button {
 }
 
 .chef-container-content-title {
-    margin-left: 390px;
+    margin-left: 300px;
     margin-top: 10px;
     font-size: 36px;
     font-size: bold;
@@ -375,7 +375,7 @@ button.information-button {
 }
 
 .chef-recipes-number {
-    margin-left: 440px;
+    margin-left: 350px;
     margin-top: 10px;
     font-size: 20px;
     color: #777777;
@@ -385,4 +385,9 @@ button.information-button {
     margin-left: 30px;
     margin-bottom: 20px;
     font-weight: bold;
+}
+
+.menu a.active {
+    font-weight: bold;
+    color: white;
 }
