@@ -3,6 +3,9 @@
     <title>Foodfy - Receitas</title>
 {% endblock %}
 {% block content %}
+    <div class="searchby-title">
+        <p>Procurando por "{{filter}}" </p>
+    </div>
     <div class="search-recipes">
         <form action="/search" method="get">
             <input type="text" name="filter" placeholder="Filtrar por nome" value="{{ filter }}">

@@ -222,3 +222,14 @@ footer {
     display: inline;
     font-size: 18px;
 }
+
+.searchby-title {
+    position: relative;
+    top: 30px;
+    left: 180px
+}
+
+.searchby-title p {
+    font-weight: bold;
+    font-size: 20px;
+}
