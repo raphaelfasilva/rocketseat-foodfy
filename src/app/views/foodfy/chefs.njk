@@ -2,20 +2,23 @@
 {% block header %}
     <title>Foodfy - Home</title>
 {% endblock %}
-{% block content  %}
-<div class="chefs-container">
-           <div class="chefs">
+{% block content %}
+    <div class="chefs-container">
+        <div class="chefs">
             {% for chef in itemschefs %}
-                <div class="chef" id="{{chef.id}}">
+                <div class="chef" id="{{ chef.id }}">
                     <div class="avatar-chef">
-                        <img src="{{chef.avatar_url}}" alt="">
+                        <img src="{{ chef.avatar_url }}" alt=""></div>
+                        <div class="chef-info">
+                            <div class="chef-name">
+                                <p>{{ chef.name }}</p>
+                            </div>
+                            <div class="chef-recipes-number">
+                                <p>{{ chef.total_recipes }} Receitas</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="chef-info">
-                        <p>{{chef.name}}</p>
-                        <p>{{chef.total_recipes}} Receitas</p>
-                    </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-</div>
- {% endblock %}
+    {% endblock %}

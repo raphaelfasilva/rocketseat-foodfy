@@ -220,7 +220,15 @@ footer {
 
 .chef-info {
     display: inline;
+}
+
+.chef-name {
     font-size: 18px;
+}
+
+.chef-recipes-number {
+    font-size: 18px;
+    color: #666666;
 }
 
 .searchby-title {
