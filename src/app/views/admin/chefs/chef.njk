@@ -18,16 +18,17 @@
   </div>
      <div class="recipes-container">
          <p class="recipes-title">Receitas</p>
-        <div class="receitas">
+        <div class="recipe-chef">
             {% for receitas in itemsreceitas %}
-                <div class="receita" id="{{receitas.id}}">
+                <div class="recipe-chef" id="{{receitas.id}}">
                     <div class="imagem-receita">
                         <img src="/img/{{receitas.image}}" alt="">
                     </div>
-                    <div class="titulo-receita">
+                    <div class="titulo-receita-chef">
                         <p>{{receitas.title}}</p>
+                        {{receitas.author}}</p>
                     </div>
-                    <div class="autor-receita">
+                    <div class="autor-receita-chef">
                         <p>por
                             {{receitas.author}}</p>
                     </div>
