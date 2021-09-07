@@ -3,26 +3,31 @@
     <title>Foodfy - Admin</title>
 {% endblock %}
 {% block content %}
-     <div class="recipes-container">
-         <a href="/admin/recipes/create">Criar Receita</a>
-         <p class="title-manager-recipes">Gerenciar Receitas</p>
-        <div class="receitas">
+    <div class="recipes-container">
+        <a class="recipe-container-create" href="/admin/recipes/create">Criar Receita</a>
+        <p class="title-manager-recipes">Gerenciar Receitas</p>
+        <div class="recipes">
             {% for receitas in itemsreceitas %}
-                <div class="receita" id="{{receitas.id}}">
-                    <div class="imagem-receita">
-                        <img src="/img/{{receitas.image}}" alt="">
-                    </div>
-                    <div class="titulo-receita">
-                        <p>{{receitas.title}}</p>
-                    </div>
-                    <div class="autor-receita">
-                        <p>por
-                            {{receitas.author}}</p>
+                <div class="recipe" id="{{ receitas.id }}">
+                    <div class="recipe-content">
+                        <div class="recipe-image">
+                            <img src="/img/{{ receitas.image }}" alt="">
+                        </div>
+                        <div class="recipe-info">
+                            <div class="recipe-title">
+                                <p>{{ receitas.title }}</p>
+                            </div>
+                            <div class="recipe-author">
+                                <p>por {{ receitas.author }}</p>
+                            </div>
+                            <div class="recipe-view-link">
+                                <a href="/admin/recipes/{{ receitas.id }}">Visualizar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
-    <script src="/js/recipesid-admin.js"></script>
-    <script src="/js/menu.js"></script>
-{% endblock %}
+</div>
+<script src="/js/menu.js"></script>{% endblock %}

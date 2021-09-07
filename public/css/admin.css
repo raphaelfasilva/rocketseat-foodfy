@@ -40,32 +40,37 @@ body {
     margin-left: 150px;
 }
 
-.receitas {
+.recipes {
     margin: 0px 30px 30px 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     max-width: 300px;
     max-height: 1px;
     gap: 10px;
     margin-bottom: 450px;
 }
 
-.receita {
+.recipe {
     margin: 10px 0px;
 }
 
-.imagem-receita img {
+.recipe-image img {
     border-radius: 15px;
-    width: 300px;
-    height: 140px;
+    width: 172px;
+    height: 80px;
 }
 
-.titulo-receita {
+.recipe-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.recipe-title {
     font-size: 18px;
     margin-bottom: 6px;
 }
 
-.autor-receita {
+.recipe-author {
     font-size: 14px;
     color: #777777
 }
@@ -265,7 +270,7 @@ button.information-button {
     font-size: 14px;
 }
 
-.recipes-container a {
+.recipe-container-create {
     position: relative;
     background-color: #6558C3;
     padding: 7px 20px;
@@ -378,11 +383,7 @@ button.information-button {
     margin-left: 350px;
     margin-top: 10px;
     font-size: 20px;
-    color: #777777;
-}
-
-.recipes-title {
-    margin-left: 30px;
+    color: #77777750: 30px;
     margin-bottom: 20px;
     font-weight: bold;
 }
@@ -392,8 +393,19 @@ button.information-button {
     color: white;
 }
 
-.recipe-chef {
-    display: inline;
+.recipes-chef-container {
+    margin-left: 150px;
+}
+
+.recipes-title {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.recipe-chef-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 .imagem-receita-chefs img {
@@ -402,10 +414,10 @@ button.information-button {
     height: 80px;
 }
 
-.imagem-receita img {
+.recipe-chef-image img {
     border-radius: 15px;
-    width: 300px;
-    height: 140px;
+    width: 172px;
+    height: 80px;
 }
 
 .titulo-receita-chef {
@@ -418,12 +430,16 @@ button.information-button {
     color: #777777
 }
 
-.recipe-chef {
+.recipes-chef {
     margin: 0px 30px 30px 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     max-width: 300px;
     max-height: 1px;
     gap: 10px;
     margin-bottom: 450px;
+}
+
+.link-chef-recipe {
+    margin-top: 5px;
 }
