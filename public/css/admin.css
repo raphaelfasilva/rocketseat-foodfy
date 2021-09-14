@@ -72,7 +72,8 @@ body {
 
 .recipe-author {
     font-size: 14px;
-    color: #777777
+    color: #777777;
+    margin-bottom: 6px;
 }
 
 .recipe-container-content {
@@ -298,9 +299,15 @@ button.information-button {
 
 .chef {
     margin: 10px 0px;
+}
+
+.chef-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+}
+
+.chef-info {
+    margin-left: 20px;
 }
 
 .avatar-chef img {
@@ -332,12 +339,6 @@ button.information-button {
     border: none;
     left: 830px;
     top: 50px;
-}
-
-.link-chef a {
-    position: relative;
-    left: 80px;
-    top: -50px
 }
 
 .chef-container-content {
@@ -442,4 +443,8 @@ button.information-button {
 
 .link-chef-recipe {
     margin-top: 5px;
+}
+
+.recipe-info {
+    margin-left: 20px;
 }

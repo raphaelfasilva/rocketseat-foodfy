@@ -8,10 +8,10 @@
         <p class="title-manager-recipes">Gerenciar Receitas</p>
         <div class="recipes">
             {% for receitas in itemsreceitas %}
-                <div class="recipe" id="{{ receitas.id }}">
+                <div class="recipe" id="{{receitas.id}}">
                     <div class="recipe-content">
                         <div class="recipe-image">
-                            <img src="/img/{{ receitas.image }}" alt="">
+                            <img src="/img/{{receitas.image}}" alt="">
                         </div>
                         <div class="recipe-info">
                             <div class="recipe-title">
@@ -21,7 +21,7 @@
                                 <p>por {{ receitas.author }}</p>
                             </div>
                             <div class="recipe-view-link">
-                                <a href="/admin/recipes/{{ receitas.id }}">Visualizar</a>
+                                <a href="/admin/recipes/{{receitas.id}}">Visualizar</a>
                             </div>
                         </div>
                     </div>
