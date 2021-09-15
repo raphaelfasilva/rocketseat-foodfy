@@ -6,8 +6,9 @@
    <div class="recipe-container-content">
         <p class="recipe-view-top-label"> recipe: {{recipe.title}}</p>
         <a class="recipe-view-top-button" href="/admin/recipes/{{recipe.id}}/edit">Editar recipe</a>
-        <div class="recipe-container-content-image"></div>
-        <img src="/img/{{recipe.image}}" alt="">
+        <div class="recipe-container-content-image">
+          <img src="/img/{{recipe.image}}" alt="">  
+        </div>
         <div class="recipe-container-content-title">
             <p>{{recipe.title}}<p>
         </div>

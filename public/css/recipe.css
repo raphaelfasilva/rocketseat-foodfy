@@ -1,13 +1,19 @@
 .recipe-container {
     margin: 30px 150px;
+    width: 940px;
 }
 
 .recipe-container-image {
-    margin-top: 10px
+    margin-top: 10px;
+}
+
+.recipe-container-image img {
+    width: 940px;
+    height: 280px;
 }
 
 .recipe-container-title {
-    margin-left: 200px;
+    text-align: center;
     margin-top: 30px;
     font-size: 36px;
     font-size: bold;
@@ -15,7 +21,7 @@
 
 .recipe-container-author {
     color: #777777;
-    margin: 5px 250px;
+    text-align: center;
     font-size: 20px;
 }
 
