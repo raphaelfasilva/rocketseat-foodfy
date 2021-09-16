@@ -92,7 +92,6 @@ body {
 
 .recipe-container-content-title {
     text-align: center;
-    margin-left: 200px;
     margin-top: 30px;
     font-size: 36px;
     font-size: bold;
@@ -201,6 +200,11 @@ button.information-button {
     margin-bottom: 15px;
 }
 
+.formulario button[type="submit"] {
+    position: relative;
+    right: 130px;
+}
+
 .item {
     margin-bottom: 20px;
 }
@@ -274,7 +278,7 @@ button.information-button {
     border-radius: 4px;
     border: none;
     bottom: 10px;
-    left: 480px;
+    left: 830px;
 }
 
 .recipe-view-top-label {
