@@ -109,6 +109,7 @@ body {
 
 .recipe-container-content-ingredients {
     margin-top: 30px;
+    margin-bottom: 10px;
     font-size: 24px;
     font-size: bold;
 }
@@ -122,12 +123,14 @@ body {
 
 .recipe-container-content-preparation {
     margin-top: 30px;
+    margin-bottom: 10px;
     font-size: 24px;
     font-size: bold;
 }
 
 .recipe-container-preparation-content {
     margin-top: 10px;
+    margin-bottom: 10px;
     visibility: visible;
     transition-duration: 0.1s;
     font-size: 18;
@@ -135,12 +138,14 @@ body {
 
 .recipe-container-content-information {
     margin-top: 30px;
+    margin-bottom: 10px;
     font-size: 24px;
     font-size: bold;
 }
 
 .recipe-container-information-content {
     margin-top: 10px;
+    margin-bottom: 10px;
     visibility: visible;
     transition-duration: 0.1s;
     font-size: 18px;
@@ -399,7 +404,7 @@ button.information-button {
     margin-left: 350px;
     margin-top: 10px;
     font-size: 20px;
-    color: #77777750: 30px;
+    color: #777777;
     margin-bottom: 20px;
     font-weight: bold;
 }

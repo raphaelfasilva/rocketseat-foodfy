@@ -5,8 +5,7 @@
 {% endblock %}
 {% block content %}
     <div class="chef-container-content">
-        <p class="chef-view-top-label">
-            Chef- {{ chef.name }}</p>
+        <p class="chef-view-top-label">Chef - {{ chef.name }}</p>
         <a class="chef-view-top-button" href="/admin/chefs/{{ chef.id }}/edit">Editar chef</a>
         <div class="chef-container-content-image">
             <img src="{{ chef.avatar_url }}" alt=""></div>
