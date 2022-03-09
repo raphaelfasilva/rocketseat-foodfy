@@ -1,45 +1,32 @@
-CREATE TABLE public.chefs (
-    id integer NOT NULL,
-    name text NOT NULL,
-    avatar_url text NOT NULL,
-    created_at timestamp with time zone NOT NULL
+CREATE TABLE "files" (
+  "id" SERIAL PRIMARY KEY,
+  "name" text,
+  "path" text NOT NULL
+);
+CREATE TABLE "chefs" (
+    "id" SERIAL PRIMARY KEY,
+    "name" text NOT NULL,
+    "file_id" integer,
+    "created_at" timestamp DEFAULT (now()),
+    "updated_at" timestamp DEFAULT (now())
+);
+CREATE TABLE "recipes" (
+  "id" SERIAL PRIMARY KEY,
+  "title" text NOT NULL,
+  "chef_id" int,
+  "user_id" int,
+  "ingredients" text[],
+  "preparation" text[],
+  "information" text,
+  "created_at" timestamp DEFAULT (now()),
+  "updated_at" timestamp DEFAULT (now())
+);
+CREATE TABLE "recipe_files" (
+    "id" SERIAL PRIMARY KEY,
+    "recipe_id" integer,
+    "file_id" integer
 );
 
-CREATE SEQUENCE public.chefs_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-ALTER SEQUENCE public.chefs_id_seq OWNED BY public.chefs.id;
-
-ALTER TABLE ONLY public.chefs ALTER COLUMN id SET DEFAULT nextval('public.chefs_id_seq'::regclass);
-
-ALTER TABLE ONLY public.chefs
-    ADD CONSTRAINT chefs_pkey PRIMARY KEY (id);
-
-CREATE TABLE public.recipes (
-    id integer NOT NULL,
-    chef_id integer NOT NULL,
-    image text NOT NULL,
-    title text NOT NULL,
-    ingredients text[] NOT NULL,
-    preparation text[] NOT NULL,
-    information text NOT NULL,
-    created_at timestamp with time zone NOT NULL
-);
-
-CREATE SEQUENCE public.recipes_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-ALTER SEQUENCE public.recipes_id_seq OWNED BY public.recipes.id;
-
-ALTER TABLE ONLY public.recipes ALTER COLUMN id SET DEFAULT nextval('public.recipes_id_seq'::regclass);
-
-ALTER TABLE ONLY public.recipes
-    ADD CONSTRAINT recipes_pkey PRIMARY KEY (id);
+ALTER TABLE "chefs" ADD FOREIGN KEY ("file_id") REFERENCES "files" ("id");
+ALTER TABLE "recipes" ADD FOREIGN KEY("chef_id") REFERENCES "chefs" ("id");
+ALTER TABLE "recipe_files" ADD FOREIGN KEY ("file_id") REFERENCES "files" ("id");
