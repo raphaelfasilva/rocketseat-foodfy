@@ -45,15 +45,12 @@ module.exports = {
             callback(results.rows[0])
         })
     },
-    findBy(filter, callback) {
-        db.query(`SELECT recipes.*,chefs.name AS author
+    findBy(filter) {
+        return db.query(`SELECT recipes.*,chefs.name AS author
         from recipes 
         LEFT JOIN chefs on (recipes.chef_id = chefs.id)
         where recipes.title ilike '%${filter}%' 
-        order by name`, function(err, results) {
-            if (err) throw ("data base error")
-            callback(results.rows)
-        })
+        order by name`)
     },
     update(data, callback) {
         const query = `

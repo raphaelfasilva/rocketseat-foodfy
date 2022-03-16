@@ -1,15 +1,24 @@
 const chef = require('../models/chef')
 module.exports = {
-    index(req, res) {
+    async index(req, res) {
         let { filter } = req.query
         if (filter) {
-            chef.findBy(filter, function(chefs) {
+            try {
+                const results = chef.findBy(filter)
+                const chefs = results.rows
                 return res.render("admin/chefs/index", { itemschefs: chefs, filter })
-            })
+            } catch (error) {
+                console.log(error)
+            }
         } else {
-            chef.all(function(chefs) {
+            try {
+                const results = await chef.all()
+                const chefs = results.rows
                 return res.render("admin/chefs/index", { itemschefs: chefs })
-            })
+            } catch (error) {
+                console.log(error)
+            }
+
         }
 
     },

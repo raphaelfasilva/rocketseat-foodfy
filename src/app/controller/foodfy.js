@@ -33,9 +33,13 @@ module.exports = {
         })
 
     },
-    chefs(req, res) {
-        chef.all(function(chefs) {
+    async chefs(req, res) {
+        try {
+            const results = await chef.all()
+            const chefs = results.rows
             return res.render("foodfy/chefs", { itemschefs: chefs })
-        })
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
