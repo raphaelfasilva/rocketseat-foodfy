@@ -25,34 +25,47 @@ module.exports = {
     create(req, res) {
         return res.render("admin/chefs/create")
     },
-    post(req, res) {
+    async post(req, res) {
         const keys = Object.keys(req.body)
+        let chefid = null
         for (key of keys) {
             if (req.body[key] == "") {
                 return res.send("por favor validar todos os campos")
             }
         }
-        chef.create(req.body, function(chef) {
-            return res.redirect(`/admin/chefs/${chef.id}`)
-        })
+        try {
+            const results = await chef.create(req.body)
+            chefid = results.rows[0].id
+        } catch (error) {
+            console.log(error)
+        }
+        return res.redirect(`/admin/chefs/${chefid}`)
+    },
+    async show(req, res) {
+        const { id } = req.params
+        let results = null
+        let chefresult = null
+        let recipes = null
+        try {
+            results = await chef.recipeschefList(id)
+            recipes = results.rows
+            results = await chef.find(id)
+            chefresult = results.rows[0]
+        } catch (error) {
+            console.log(error)
+        }
+        return res.render("admin/chefs/chef", { chef: chefresult, itemsreceitas: recipes })
 
     },
-    show(req, res) {
+    async edit(req, res) {
         const { id } = req.params
-        chef.recipeschefList(id, function(recipes) {
-            chef.find(id, function(chef) {
-                if (!chef) return res.send("chef não encontrado")
-                return res.render("admin/chefs/chef", { chef, itemsreceitas: recipes })
-            })
-        })
-
-    },
-    edit(req, res) {
-        const { id } = req.params
-        chef.find(id, function(chef) {
-            if (!chef) return res.send("chef não encontrado")
-            return res.render("admin/chefs/edit", { chef })
-        })
+        try {
+            const results = await chef.find(id)
+            const chefresult = results.rows[0]
+            return res.render("admin/chefs/edit", { chef: chefresult })
+        } catch (error) {
+            console.log(error)
+        }
     },
     put(req, res) {
         const { id } = req.body
