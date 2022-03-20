@@ -27,7 +27,7 @@ module.exports = {
         from chefs
         LEFT JOIN recipes on (chefs.id = recipes.chef_id) where chefs.id = $1 GROUP BY chefs.id `, [id])
     },
-    update(data, callback) {
+    update(data) {
         const query = `
         update chefs SET 
         name=($1),
@@ -39,16 +39,11 @@ module.exports = {
             data.avatar_url,
             data.id
         ]
-        db.query(query, values, function(err, res) {
-            if (err) throw "data base error"
-            callback()
-        })
+        return db.query(query, values)
 
     },
-    delete(id, callback) {
-        db.query(`DELETE FROM chefs where id = $1`, [id], function() {
-            callback()
-        })
+    delete(id) {
+        return db.query(`DELETE FROM chefs where id = $1`, [id])
     },
     recipeschefList(id) {
         return db.query(`SELECT recipes.*,chefs.name AS author

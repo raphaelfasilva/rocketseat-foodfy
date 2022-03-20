@@ -1,10 +1,14 @@
  const recipe = require('../models/recipe')
  module.exports = {
-     index(req, res) {
-         recipe.all(function(recipes) {
-             res.render("admin/recipes/index", { itemsreceitas: recipes })
-         })
-
+     async index(req, res) {
+         let recipes = null
+         try {
+             const results = await recipe.all()
+             recipes = results.rows
+         } catch (error) {
+             console.log(error)
+         }
+         res.render("admin/recipes/index", { itemsreceitas: recipes })
      },
      show(req, res) {
          const { id } = req.params

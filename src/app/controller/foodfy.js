@@ -5,33 +5,51 @@ module.exports = {
     about(req, res) {
         return res.render("foodfy/about")
     },
-    index(req, res) {
-        recipe.all(function(recipes) {
-            return res.render("foodfy/index", { itemsreceitas: recipes })
-        })
-
+    async index(req, res) {
+        let recipes = null
+        try {
+            const results = await recipe.all()
+            recipes = results.rows
+        } catch (error) {
+            console.log(error)
+        }
+        res.render("foodfy/index", { itemsreceitas: recipes })
     },
-    search(req, res) {
+    async search(req, res) {
         const { filter } = req.query
-        recipe.findBy(filter, function(recipes) {
-            return res.render("foodfy/search", { itemsreceitas: recipes, filter })
-        })
+        let recipes = null
+        try {
+            const results = await recipe.findBy(filter)
+            recipes = results.rows
+        } catch (error) {
+            console.log(error)
+        }
+        return res.render("foodfy/search", { itemsreceitas: recipes, filter })
     },
-    recipes(req, res) {
-        recipe.all(function(recipes) {
-            return res.render("foodfy/recipes", { itemsreceitas: recipes })
-        })
+    async recipes(req, res) {
+        let recipes = null
+        try {
+            const results = await recipe.all()
+            recipes = results.rows
+        } catch (error) {
+            console.log(error)
+        }
+        res.render("foodfy/recipes", { itemsreceitas: recipes })
     },
-    show(req, res) {
+    async show(req, res) {
         const id = req.params.id
-        recipe.find(id, function(recipe) {
-            if (!recipe) {
-                res.status(404).render("not-found");
-            } else {
-                return res.render("foodfy/recipe", { receita: recipe });
-            }
-        })
-
+        let reciperesult = null
+        try {
+            const results = await recipe.find(id)
+            reciperesult = results.rows[0]
+        } catch (error) {
+            console.log(error)
+        }
+        if (reciperesult) {
+            return res.render("foodfy/recipe", { receita: reciperesult });
+        } else {
+            return res.status(404).render("not-found");
+        }
     },
     async chefs(req, res) {
         try {

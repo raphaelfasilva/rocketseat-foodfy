@@ -1,14 +1,11 @@
 const db = require('../../config/db')
 const { date, age } = require('../../lib/util')
 module.exports = {
-    all(callback) {
-        db.query(`SELECT recipes.*,chefs.name AS author
+    all() {
+        return db.query(`SELECT recipes.*,chefs.name AS author
         from recipes 
         LEFT JOIN chefs on (recipes.chef_id = chefs.id)
-        order by title`, function(err, results) {
-            if (err) throw err
-            callback(results.rows)
-        })
+        order by title`)
     },
     create(data, callback) {
         const query = `
@@ -37,13 +34,10 @@ module.exports = {
             callback(results.rows[0])
         })
     },
-    find(id, callback) {
-        db.query(`SELECT recipes.*,chefs.name AS author
+    find(id) {
+        return db.query(`SELECT recipes.*,chefs.name AS author
         from recipes 
-        LEFT JOIN chefs on (recipes.chef_id = chefs.id) where recipes.id = $1`, [id], function(err, results) {
-            if (err) throw err
-            callback(results.rows[0])
-        })
+        LEFT JOIN chefs on (recipes.chef_id = chefs.id) where recipes.id = $1`, [id])
     },
     findBy(filter) {
         return db.query(`SELECT recipes.*,chefs.name AS author
