@@ -7,7 +7,7 @@ module.exports = {
         LEFT JOIN chefs on (recipes.chef_id = chefs.id)
         order by title`)
     },
-    create(data, callback) {
+    create(data) {
         const query = `
         INSERT INTO recipes(
             chef_id,
@@ -21,7 +21,7 @@ module.exports = {
         RETURNING ID
         `
         const values = [
-            1,
+            data.chef_id,
             data.image,
             data.title,
             data.ingredients,
@@ -29,10 +29,7 @@ module.exports = {
             data.information,
             date(Date.now()).iso
         ]
-        db.query(query, values, function(err, results) {
-            if (err) throw err
-            callback(results.rows[0])
-        })
+        return db.query(query, values)
     },
     find(id) {
         return db.query(`SELECT recipes.*,chefs.name AS author
@@ -46,7 +43,7 @@ module.exports = {
         where recipes.title ilike '%${filter}%' 
         order by name`)
     },
-    update(data, callback) {
+    update(data) {
         const query = `
         update recipes SET 
         image=($1),
@@ -66,20 +63,12 @@ module.exports = {
             data.information,
             data.id
         ]
-        db.query(query, values, function(err, res) {
-            if (err) throw err
-            callback()
-        })
+        return db.query(query, values)
     },
-    delete(id, callback) {
-        db.query(`DELETE FROM recipes where id = $1`, [id], function() {
-            callback()
-        })
+    delete(id) {
+        return db.query(`DELETE FROM recipes where id = $1`, [id])
     },
-    ChefsSelectoptions(callback) {
-        db.query('SELECT name,id FROM chefs', function(err, results) {
-            if (err) throw 'data base error'
-            callback(results.rows)
-        })
+    ChefsSelectoptions() {
+        return db.query('SELECT name,id FROM chefs')
     }
 }
