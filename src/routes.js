@@ -3,6 +3,7 @@
     const foodfy = require("./app/controller/foodfy")
     const recipes = require("./app/controller/recipes")
     const chefs = require("./app/controller/chefs")
+    const multer = require('./middleware/multer')
     routes.get('/', foodfy.index)
     routes.get('/search', foodfy.search)
     routes.get('/sobre', foodfy.about)
