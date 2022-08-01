@@ -11,7 +11,6 @@ module.exports = {
         const query = `
         INSERT INTO recipes(
             chef_id,
-            image,
             title,
             ingredients,
             preparation,
@@ -22,7 +21,6 @@ module.exports = {
         `
         const values = [
             data.chef_id,
-            data.image,
             data.title,
             data.ingredients,
             data.preparation,
@@ -46,7 +44,6 @@ module.exports = {
     update(data) {
         const query = `
         update recipes SET 
-        image=($1),
         chef_id=($2),
         title=($3),
         ingredients=($4),
@@ -55,7 +52,6 @@ module.exports = {
         where id=$7
      `
         const values = [
-            data.image,
             data.chef_id,
             data.title,
             data.ingredients,
